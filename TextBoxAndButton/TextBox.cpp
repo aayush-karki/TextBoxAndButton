@@ -39,7 +39,7 @@ void TextBox::setSelected( bool a_selected )
 		std::string newStr = "";
 
 		// copying the string except the last char
-		for( unsigned i = 0; i < tempStr.length() -1; ++i )
+		for( unsigned i = 0; i < tempStr.length(); ++i )
 		{
 			newStr += tempStr[ i ];
 		}

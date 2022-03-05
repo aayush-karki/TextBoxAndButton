@@ -53,7 +53,7 @@ inline void TextBox::SetLimit( bool a_hasLimit, unsigned a_limit)
 
 	if( a_limit != 0 )
 	{
-		--m_limit;
+		m_limit;
 	}
 }
 
