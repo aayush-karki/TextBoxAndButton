@@ -16,7 +16,7 @@ Button::Button( std::string a_text, sf::Vector2f a_size, int a_charSize,
 
 
 	m_button.setSize( a_size );
-	m_button.setFillColor( a_textColor );
+	m_button.setFillColor( a_bgColor );
 
 }
 
