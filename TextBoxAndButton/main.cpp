@@ -5,6 +5,7 @@
 #include <sstream>
 
 #include "TextBox.h"
+#include "Button.h"
 
 // ==========================================================================
 
@@ -30,9 +31,13 @@ int main()
 	TextBox myTextBox( 25, sf::Color::White, false);
 	myTextBox.SetFont( font );
 	myTextBox.SetPosition( sf::Vector2f( 200, 200 ) );
-	myTextBox.SetLimit( true, 0 );
+	myTextBox.SetLimit( true, 10 );
 
 	bool close = false;
+
+	Button myButton( "Click Me", { 200,50 }, 20, sf::Color::Green, sf::Color::Black );
+	myButton.SetFont( font );
+	myButton.SetPosition( { 200,300 } );
 
 	// app main loop
 	while( !close )
@@ -57,6 +62,17 @@ int main()
 			{
 				myTextBox.TypeOn( events );
 			}
+			else if( events.type == sf::Event::MouseMoved )
+			{
+				if( myButton.IsMouseOverBtn( window ) )
+				{
+					myButton.SetBtnBackColor( sf::Color::Blue );
+				}
+				else
+				{
+					myButton.SetBtnBackColor( sf::Color::Green );
+				}
+			}
 		}
 
 		// logics
@@ -64,6 +80,7 @@ int main()
 		// rendering
 		window.clear();
 		myTextBox.Draw( window );
+		myButton.Draw( window );
 		window.display();
 
 	}

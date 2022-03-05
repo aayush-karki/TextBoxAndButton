@@ -6,18 +6,8 @@ class Button
 	// ============ public member function =============== 
 public:
 	Button() {};
-	Button(std::string a_text, sf::Vector2f a_size, int a_charSize, 
-			sf::Color a_bgColor, sf::Color a_textColor ) 
-	{
-		m_text.setString( a_text );
-		m_text.setFillColor( a_textColor );
-		m_text.setCharacterSize( a_charSize );
-
-
-		m_button.setSize( a_size );
-		m_button.setFillColor( a_textColor );
-
-	}
+	Button( std::string a_text, sf::Vector2f a_size, int a_charSize,
+			sf::Color a_bgColor, sf::Color a_textColor );
 
 	void SetFont( sf::Font& a_font ); // setter funciton to set the font size
 	void SetTextColor( sf::Color a_color ); // setter funciton to set the text color
